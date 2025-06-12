@@ -1,9 +1,6 @@
-
 import { ArrowDown } from 'lucide-react';
-
 const Hero = () => {
-  return (
-    <section id="home" className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden">
+  return <section id="home" className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#8F00FF]/10 via-transparent to-[#EEEC26]/5"></div>
       <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-[#8F00FF]/5 rounded-full blur-3xl"></div>
@@ -11,7 +8,7 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-5xl font-bold text-white mb-6 leading-tight md:text-5xl px-0 text-center py-[20px] mx-0 my-[50px]">
             Sites e Anúncios que
             <span className="text-[#EEEC26] block animate-pulse">vendem enquanto</span>
             <span className="text-white">você vive</span>
@@ -51,8 +48,6 @@ const Hero = () => {
           <ArrowDown className="text-[#EEEC26] w-6 h-6" />
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
