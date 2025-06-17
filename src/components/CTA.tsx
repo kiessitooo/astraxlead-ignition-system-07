@@ -1,9 +1,6 @@
-
 import { MessageSquare, Phone } from 'lucide-react';
-
 const CTA = () => {
-  return (
-    <section className="py-20 bg-gradient-to-br from-[#EEEC26]/10 via-black to-[#8F00FF]/10">
+  return <section className="py-20 bg-gradient-to-br from-[#EEEC26]/10 via-black to-[#8F00FF]/10">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
@@ -45,14 +42,12 @@ const CTA = () => {
               </div>
               <div className="flex items-center text-gray-300">
                 <div className="w-2 h-2 bg-[#8F00FF] rounded-full mr-3"></div>
-                <span>Plano de ação para os próximos 90 dias</span>
+                <span>Plano de accão para os próximos 30 dias</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CTA;
