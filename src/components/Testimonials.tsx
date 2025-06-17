@@ -1,29 +1,35 @@
+
 const Testimonials = () => {
   const testimonials = [{
     quote: "Achei que o processo de criação do site ia ser demorado, mas fui surpreendida. Em poucos dias a Astrax entregou uma landing que captou mais clientes do que eu consegui no mês inteiro anterior.",
     name: "Janeth Neves",
     company: "BelezaJan",
     sector: "Estética e Beleza",
-    role: "Fundadora"
+    role: "Fundadora",
+    image: "/lovable-uploads/a5f7271e-1bd4-44ae-80e5-d028e8681638.png"
   }, {
     quote: "No início fiquei desconfiado porque já tinha tentado anúncios antes e só perdi dinheiro. Mas com a Astrax, em 12 dias, vendemos mais do que nos dois meses anteriores.",
     name: "Carlos Fontes",
     company: "Cards Angola",
     sector: "E-commerce",
-    role: "CEO"
+    role: "CEO",
+    image: "/lovable-uploads/467c84bd-50c7-4d6e-b121-31a6d149a19f.png"
   }, {
     quote: "Demorei a entender como a automação podia ajudar meu negócio. Hoje não sei como vivia sem. A Astrax me ajudou a recuperar mais de 30% dos orçamentos esquecidos.",
     name: "Evânia Baptista",
     company: "Gilas Clean",
     sector: "Serviços de Limpeza",
-    role: "Dona"
+    role: "Dona",
+    image: "/lovable-uploads/0ae01c43-b2a0-4dae-b1b9-d85978ad6055.png"
   }, {
     quote: "Achei que o design ia ser mais do mesmo, como todo site. Mas o que entregaram foi algo que realmente passa profissionalismo e posiciona minha marca do jeito certo.",
     name: "Milton Dias",
     company: "DripLink Studio",
     sector: "Educação Criativa",
-    role: "Fundador"
+    role: "Fundador",
+    image: "/lovable-uploads/56a408b2-a09c-47ff-9b28-a65f25f865da.png"
   }];
+  
   return <section className="py-20 bg-gradient-to-b from-black to-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
@@ -42,12 +48,12 @@ const Testimonials = () => {
               </div>
               
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-gradient-to-r from-[#8F00FF] to-[#EEEC26] rounded-full flex items-center justify-center mr-4">
-                  <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
-                    <span className="text-[#EEEC26] font-bold text-lg">
-                      {testimonial.name.charAt(0)}
-                    </span>
-                  </div>
+                <div className="w-12 h-12 bg-gradient-to-r from-[#8F00FF] to-[#EEEC26] rounded-full flex items-center justify-center mr-4 p-0.5">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-full h-full rounded-full object-cover"
+                  />
                 </div>
                 <div>
                   <div className="text-white font-semibold">
@@ -72,4 +78,5 @@ const Testimonials = () => {
       </div>
     </section>;
 };
+
 export default Testimonials;
