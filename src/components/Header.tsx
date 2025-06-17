@@ -23,9 +23,7 @@ const Header = () => {
             <a href="#about" className="text-gray-300 hover:text-[#EEEC26] transition-colors duration-300">
               Sobre
             </a>
-            <button className="bg-[#EEEC26] text-black px-6 py-2 rounded-lg font-semibold hover:bg-[#EEEC26]/90 transition-all duration-300 hover:scale-105">
-              Agendar Diagnóstico
-            </button>
+            <button className="bg-[#EEEC26] text-black px-6 py-2 rounded-lg font-semibold hover:bg-[#EEEC26]/90 transition-all duration-300 hover:scale-105">Agendar Conversa</button>
           </nav>
 
           {/* Mobile Menu Button */}
