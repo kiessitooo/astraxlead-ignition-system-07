@@ -1,7 +1,5 @@
-
 const Footer = () => {
-  return (
-    <footer className="bg-black border-t border-gray-800 py-12">
+  return <footer className="bg-black border-t border-gray-800 py-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="col-span-2">
@@ -37,7 +35,7 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-semibold mb-4">Contato</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>contato@astraxlead.com</li>
+              <li>geral@astraxlead.com</li>
               <li>+55 (11) 99999-9999</li>
               <li className="pt-2">
                 <button className="bg-[#EEEC26] text-black px-4 py-2 rounded-lg font-semibold hover:bg-[#EEEC26]/90 transition-all duration-300">
@@ -59,8 +57,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
