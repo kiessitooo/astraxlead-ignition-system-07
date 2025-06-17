@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import { Calendar, Clock, User, Phone, Mail, Building, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
 
 const Agendar = () => {
   const [formData, setFormData] = useState({
@@ -13,31 +15,55 @@ const Agendar = () => {
     hora: '',
     desafio: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    // Create email content
-    const emailContent = `
-Nova Consulta Agendada - AstraxLead
+    try {
+      const { error } = await supabase
+        .from('appointments')
+        .insert([
+          {
+            nome: formData.nome,
+            email: formData.email,
+            telefone: formData.telefone,
+            empresa: formData.empresa,
+            data: formData.data,
+            hora: formData.hora,
+            desafio: formData.desafio
+          }
+        ]);
 
-Nome: ${formData.nome}
-Email: ${formData.email}
-Telefone: ${formData.telefone}
-Empresa: ${formData.empresa}
-Data: ${formData.data}
-Hora: ${formData.hora}
-Desafio: ${formData.desafio}
-    `;
+      if (error) throw error;
 
-    // Create mailto link
-    const mailtoLink = `mailto:angelodecarvalhosmall@gmail.com?subject=Nova Consulta Agendada - ${formData.nome}&body=${encodeURIComponent(emailContent)}`;
-    
-    // Open email client
-    window.location.href = mailtoLink;
-    
-    // Show success message
-    alert('Informações preparadas! Seu cliente de email será aberto para enviar os dados.');
+      toast({
+        title: "Agendamento realizado com sucesso!",
+        description: "Entraremos em contato em breve para confirmar sua consulta.",
+      });
+
+      // Reset form
+      setFormData({
+        nome: '',
+        email: '',
+        telefone: '',
+        empresa: '',
+        data: '',
+        hora: '',
+        desafio: ''
+      });
+    } catch (error) {
+      console.error('Error saving appointment:', error);
+      toast({
+        title: "Erro ao agendar",
+        description: "Ocorreu um erro ao salvar seu agendamento. Tente novamente.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -199,9 +225,10 @@ Desafio: ${formData.desafio}
 
                 <button
                   type="submit"
-                  className="w-full bg-[#EEEC26] text-black py-4 rounded-lg text-lg font-semibold hover:bg-[#EEEC26]/90 transition-all duration-300 hover:scale-105 shadow-lg"
+                  disabled={isSubmitting}
+                  className="w-full bg-[#EEEC26] text-black py-4 rounded-lg text-lg font-semibold hover:bg-[#EEEC26]/90 transition-all duration-300 hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
-                  Agendar Diagnóstico Gratuito
+                  {isSubmitting ? 'Agendando...' : 'Agendar Diagnóstico Gratuito'}
                 </button>
               </form>
             </div>
