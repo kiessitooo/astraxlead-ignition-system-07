@@ -36,11 +36,10 @@ const Footer = () => {
             <h4 className="text-white font-semibold mb-4">Contato</h4>
             <ul className="space-y-2 text-gray-400">
               <li>geral@astraxlead.com</li>
-              <li>+55 (11) 99999-9999</li>
+              <li>+244 926851387
++351 966 222 032</li>
               <li className="pt-2">
-                <button className="bg-[#EEEC26] text-black px-4 py-2 rounded-lg font-semibold hover:bg-[#EEEC26]/90 transition-all duration-300">
-                  Agendar Diagnóstico
-                </button>
+                <button className="bg-[#EEEC26] text-black px-4 py-2 rounded-lg font-semibold hover:bg-[#EEEC26]/90 transition-all duration-300">Agendar Conversa</button>
               </li>
             </ul>
           </div>
