@@ -1,6 +1,9 @@
+
 import { Heart, Target, Zap } from 'lucide-react';
+
 const About = () => {
-  return <section id="about" className="py-20 bg-gradient-to-b from-gray-900 to-black">
+  return (
+    <section id="about" className="py-20 bg-gradient-to-b from-gray-900 to-black">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -61,8 +64,12 @@ const About = () => {
             <div className="relative">
               <div className="bg-gradient-to-br from-[#EEEC26]/20 to-[#8F00FF]/20 p-8 rounded-2xl border border-[#EEEC26]/30">
                 <div className="text-center">
-                  <div className="w-32 h-32 bg-gradient-to-br from-[#EEEC26] to-[#8F00FF] rounded-full mx-auto mb-6 flex items-center justify-center">
-                    <span className="text-3xl font-bold text-black">AL</span>
+                  <div className="w-32 h-32 bg-white rounded-full mx-auto mb-6 flex items-center justify-center p-4">
+                    <img 
+                      src="/lovable-uploads/fdcdf8ec-9feb-4830-8411-9d0de810e92d.png" 
+                      alt="AstraxLead Logo" 
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-4">AstraxLead Team</h3>
                   <p className="text-gray-300 mb-6">
@@ -93,6 +100,8 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default About;

@@ -13,7 +13,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl font-bold text-white mb-6 leading-tight md:text-5xl px-0 text-center py-[20px] mx-0 my-[50px]">
             A sua empresa vai decolar nos
-            <span className="text-[#EEEC26] block animate-pulse bg-gradient-to-r from-[#EEEC26] to-[#8F00FF] bg-clip-text text-transparent font-extrabold transform scale-110 inline-block">
+            <span className="text-[#EEEC26] block">
               resultados em 30 dias
             </span>
             <span className="text-white block">ou devolvemos o dinheiro</span>
@@ -23,7 +23,7 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <a href="/agendar" className="bg-[#EEEC26] text-black px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#EEEC26]/90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-[#EEEC26]/25">
-              Agendar Conversa(webconferência)
+              Agendar Diagnóstico
             </a>
             <button className="border-2 border-[#8F00FF] text-[#8F00FF] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#8F00FF] hover:text-white transition-all duration-300">
               Ver Casos de Sucesso

@@ -1,6 +1,13 @@
+
 import { MessageSquare, Phone } from 'lucide-react';
+
 const CTA = () => {
-  return <section className="py-20 bg-gradient-to-br from-[#EEEC26]/10 via-black to-[#8F00FF]/10">
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/351966222032', '_blank');
+  };
+
+  return (
+    <section className="py-20 bg-gradient-to-br from-[#EEEC26]/10 via-black to-[#8F00FF]/10">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
@@ -15,11 +22,14 @@ const CTA = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <button className="bg-[#EEEC26] text-black px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#EEEC26]/90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-[#EEEC26]/25 flex items-center gap-2">
+            <a href="/agendar" className="bg-[#EEEC26] text-black px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#EEEC26]/90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-[#EEEC26]/25 flex items-center gap-2">
               <Phone className="w-5 h-5" />
               Agendar Diagnóstico Gratuito
-            </button>
-            <button className="border-2 border-[#8F00FF] text-[#8F00FF] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#8F00FF] hover:text-white transition-all duration-300 flex items-center gap-2">
+            </a>
+            <button 
+              onClick={handleWhatsAppClick}
+              className="border-2 border-[#8F00FF] text-[#8F00FF] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#8F00FF] hover:text-white transition-all duration-300 flex items-center gap-2"
+            >
               <MessageSquare className="w-5 h-5" />
               Falar no WhatsApp
             </button>
@@ -48,6 +58,8 @@ const CTA = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default CTA;
