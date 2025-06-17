@@ -14,10 +14,7 @@ const Hero = () => {
             <span className="text-white">você vive</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Transformamos seu negócio digital com tráfego pago estratégico e websites 
-            de alta performance. Sem enrolação, só resultados que você pode medir.
-          </p>
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">Nada de promessas vagas. Aquilo que já entregamos para dezenas de negócios pode ser seu.</p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <button className="bg-[#EEEC26] text-black px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#EEEC26]/90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-[#EEEC26]/25">
