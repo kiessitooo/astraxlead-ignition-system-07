@@ -1,5 +1,5 @@
 
-import { Target, Globe, Zap, TrendingUp } from 'lucide-react';
+import { Target, Globe, Zap, TrendingUp, Bot } from 'lucide-react';
 
 const Services = () => {
   return (
@@ -10,11 +10,11 @@ const Services = () => {
             O que <span className="text-[#EEEC26]">fazemos</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Dois pilares fundamentais para transformar sua presença digital em uma máquina de vendas
+            Três pilares fundamentais para transformar sua presença digital em uma máquina de vendas
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {/* Tráfego Pago */}
           <div className="bg-gray-800/50 p-8 rounded-2xl border border-gray-700 hover:border-[#EEEC26]/50 transition-all duration-300 group">
             <div className="flex items-center mb-6">
@@ -43,9 +43,9 @@ const Services = () => {
               </div>
             </div>
 
-            <button className="w-full bg-[#EEEC26] text-black py-3 rounded-lg font-semibold hover:bg-[#EEEC26]/90 transition-all duration-300 hover:scale-105">
+            <a href="/agendar" className="w-full bg-[#EEEC26] text-black py-3 rounded-lg font-semibold hover:bg-[#EEEC26]/90 transition-all duration-300 hover:scale-105 block text-center">
               Quero mais tráfego qualificado
-            </button>
+            </a>
           </div>
 
           {/* Websites */}
@@ -76,9 +76,42 @@ const Services = () => {
               </div>
             </div>
 
-            <button className="w-full bg-[#8F00FF] text-white py-3 rounded-lg font-semibold hover:bg-[#8F00FF]/90 transition-all duration-300 hover:scale-105">
+            <a href="/agendar" className="w-full bg-[#8F00FF] text-white py-3 rounded-lg font-semibold hover:bg-[#8F00FF]/90 transition-all duration-300 hover:scale-105 block text-center">
               Quero um site que vende
-            </button>
+            </a>
+          </div>
+
+          {/* Automação de Marketing */}
+          <div className="bg-gray-800/50 p-8 rounded-2xl border border-gray-700 hover:border-[#EEEC26]/50 transition-all duration-300 group">
+            <div className="flex items-center mb-6">
+              <div className="bg-gradient-to-r from-[#EEEC26] to-[#8F00FF] p-3 rounded-lg mr-4 group-hover:scale-110 transition-transform duration-300">
+                <Bot className="w-8 h-8 text-black" />
+              </div>
+              <h3 className="text-2xl font-bold text-white">Automação de Marketing</h3>
+            </div>
+            
+            <p className="text-gray-300 mb-6 text-lg leading-relaxed">
+              Sistemas inteligentes que trabalham 24/7 para nutrir leads, recuperar vendas perdidas e fidelizar clientes.
+            </p>
+
+            <div className="space-y-4 mb-8">
+              <div className="flex items-center text-gray-300">
+                <div className="w-2 h-2 bg-[#8F00FF] rounded-full mr-3"></div>
+                <span>Follow-up automático de leads qualificados</span>
+              </div>
+              <div className="flex items-center text-gray-300">
+                <div className="w-2 h-2 bg-[#8F00FF] rounded-full mr-3"></div>
+                <span>Recuperação de carrinho abandonado</span>
+              </div>
+              <div className="flex items-center text-gray-300">
+                <div className="w-2 h-2 bg-[#8F00FF] rounded-full mr-3"></div>
+                <span>Sequências de email personalizadas</span>
+              </div>
+            </div>
+
+            <a href="/agendar" className="w-full bg-gradient-to-r from-[#EEEC26] to-[#8F00FF] text-black py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 hover:scale-105 block text-center">
+              Quero automatizar meu marketing
+            </a>
           </div>
         </div>
 

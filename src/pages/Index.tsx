@@ -1,9 +1,10 @@
 
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import Testimonials from '@/components/Testimonials';
 import Services from '@/components/Services';
 import SocialProof from '@/components/SocialProof';
-import CaseStudies from '@/components/CaseStudies';
+import Problems from '@/components/Problems';
 import About from '@/components/About';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
@@ -14,9 +15,10 @@ const Index = () => {
     <div className="min-h-screen bg-black">
       <Header />
       <Hero />
+      <Testimonials />
       <SocialProof />
       <Services />
-      <CaseStudies />
+      <Problems />
       <About />
       <CTA />
       <Footer />
