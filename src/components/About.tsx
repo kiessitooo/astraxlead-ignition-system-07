@@ -1,9 +1,6 @@
-
 import { Heart, Target, Zap } from 'lucide-react';
-
 const About = () => {
-  return (
-    <section id="about" className="py-20 bg-gradient-to-b from-gray-900 to-black">
+  return <section id="about" className="py-20 bg-gradient-to-b from-gray-900 to-black">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -82,7 +79,7 @@ const About = () => {
                       <div className="text-sm text-gray-400">Projetos entregues</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-[#EEEC26]">R$ 2M+</div>
+                      <div className="text-2xl font-bold text-[#EEEC26]">KZ 4M+</div>
                       <div className="text-sm text-gray-400">Em vendas geradas</div>
                     </div>
                     <div>
@@ -96,8 +93,6 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
