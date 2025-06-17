@@ -17,9 +17,7 @@ const Hero = () => {
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">Nada de promessas vagas. Aquilo que já entregamos para dezenas de negócios pode ser seu.</p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <button className="bg-[#EEEC26] text-black px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#EEEC26]/90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-[#EEEC26]/25">
-              Agendar Diagnóstico Gratuito
-            </button>
+            <button className="bg-[#EEEC26] text-black px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#EEEC26]/90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-[#EEEC26]/25">Agendar Conversa(webconferência)</button>
             <button className="border-2 border-[#8F00FF] text-[#8F00FF] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#8F00FF] hover:text-white transition-all duration-300">
               Ver Casos de Sucesso
             </button>
