@@ -1,4 +1,5 @@
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Globe, Smartphone, Zap, Palette, Briefcase, BarChart3 } from 'lucide-react';
+
 const Hero = () => {
   return <section id="home" className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden">
       {/* Background Elements */}
@@ -72,33 +73,33 @@ const Hero = () => {
             <div className="relative w-80 h-80 perspective-1000">
               <div className="cube-container absolute inset-0 transform-style-preserve-3d animate-spin-slow">
                 {/* Front face - Website */}
-                <div className="cube-face cube-front bg-gradient-to-br from-[#8F00FF]/20 to-[#EEEC26]/20 border border-[#8F00FF]/30 backdrop-blur-sm flex items-center justify-center text-[#EEEC26] text-6xl">
-                  🌐
+                <div className="cube-face cube-front bg-gradient-to-br from-[#8F00FF]/20 to-[#EEEC26]/20 border border-[#8F00FF]/30 backdrop-blur-sm flex items-center justify-center">
+                  <Globe className="text-[#EEEC26] w-16 h-16" />
                 </div>
                 
                 {/* Back face - Meta Ads */}
-                <div className="cube-face cube-back bg-gradient-to-br from-[#8F00FF]/20 to-[#EEEC26]/20 border border-[#8F00FF]/30 backdrop-blur-sm flex items-center justify-center text-[#EEEC26] text-6xl">
-                  📱
+                <div className="cube-face cube-back bg-gradient-to-br from-[#8F00FF]/20 to-[#EEEC26]/20 border border-[#8F00FF]/30 backdrop-blur-sm flex items-center justify-center">
+                  <Smartphone className="text-[#EEEC26] w-16 h-16" />
                 </div>
                 
                 {/* Right face - Automation */}
-                <div className="cube-face cube-right bg-gradient-to-br from-[#8F00FF]/20 to-[#EEEC26]/20 border border-[#8F00FF]/30 backdrop-blur-sm flex items-center justify-center text-[#EEEC26] text-6xl">
-                  ⚡
+                <div className="cube-face cube-right bg-gradient-to-br from-[#8F00FF]/20 to-[#EEEC26]/20 border border-[#8F00FF]/30 backdrop-blur-sm flex items-center justify-center">
+                  <Zap className="text-[#EEEC26] w-16 h-16" />
                 </div>
                 
                 {/* Left face - Branding */}
-                <div className="cube-face cube-left bg-gradient-to-br from-[#8F00FF]/20 to-[#EEEC26]/20 border border-[#8F00FF]/30 backdrop-blur-sm flex items-center justify-center text-[#EEEC26] text-6xl">
-                  🎨
+                <div className="cube-face cube-left bg-gradient-to-br from-[#8F00FF]/20 to-[#EEEC26]/20 border border-[#8F00FF]/30 backdrop-blur-sm flex items-center justify-center">
+                  <Palette className="text-[#EEEC26] w-16 h-16" />
                 </div>
                 
                 {/* Top face */}
-                <div className="cube-face cube-top bg-gradient-to-br from-[#8F00FF]/20 to-[#EEEC26]/20 border border-[#8F00FF]/30 backdrop-blur-sm flex items-center justify-center text-[#EEEC26] text-6xl">
-                  💼
+                <div className="cube-face cube-top bg-gradient-to-br from-[#8F00FF]/20 to-[#EEEC26]/20 border border-[#8F00FF]/30 backdrop-blur-sm flex items-center justify-center">
+                  <Briefcase className="text-[#EEEC26] w-16 h-16" />
                 </div>
                 
                 {/* Bottom face */}
-                <div className="cube-face cube-bottom bg-gradient-to-br from-[#8F00FF]/20 to-[#EEEC26]/20 border border-[#8F00FF]/30 backdrop-blur-sm flex items-center justify-center text-[#EEEC26] text-6xl">
-                  📊
+                <div className="cube-face cube-bottom bg-gradient-to-br from-[#8F00FF]/20 to-[#EEEC26]/20 border border-[#8F00FF]/30 backdrop-blur-sm flex items-center justify-center">
+                  <BarChart3 className="text-[#EEEC26] w-16 h-16" />
                 </div>
               </div>
             </div>
