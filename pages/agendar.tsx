@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Calendar, Clock, User, Phone, Mail, Building, ArrowLeft } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 
@@ -20,7 +20,7 @@ const Agendar = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       const { error } = await supabase
         .from('appointments')
@@ -43,7 +43,6 @@ const Agendar = () => {
         description: "Entraremos em contato em breve para confirmar sua consulta.",
       });
 
-      // Reset form
       setFormData({
         nome: '',
         email: '',
@@ -80,7 +79,7 @@ const Agendar = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       <div className="container mx-auto px-4 py-8">
-        <Link to="/" className="inline-flex items-center text-[#EEEC26] hover:text-[#EEEC26]/90 mb-8 transition-colors">
+        <Link href="/" className="inline-flex items-center text-[#EEEC26] hover:text-[#EEEC26]/90 mb-8 transition-colors">
           <ArrowLeft className="w-5 h-5 mr-2" />
           Voltar ao site
         </Link>
@@ -96,7 +95,6 @@ const Agendar = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Left side - Form */}
             <div className="bg-gray-900/50 p-8 rounded-2xl border border-gray-800">
               <h2 className="text-2xl font-bold mb-6 flex items-center">
                 <Calendar className="w-6 h-6 text-[#EEEC26] mr-3" />
@@ -232,7 +230,6 @@ const Agendar = () => {
               </form>
             </div>
 
-            {/* Right side - Benefits */}
             <div className="space-y-6">
               <div className="bg-gradient-to-r from-[#EEEC26]/10 to-[#8F00FF]/10 p-6 rounded-xl border border-[#EEEC26]/20">
                 <h3 className="text-xl font-semibold text-white mb-4">O que você recebe no diagnóstico:</h3>
@@ -279,5 +276,5 @@ const Agendar = () => {
   );
 };
 
-export default Agendar; 
-mover página agendar para raiz
+export default Agendar;
+
