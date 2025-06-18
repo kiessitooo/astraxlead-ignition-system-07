@@ -1,6 +1,6 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Agendar from "./pages/agendar"; // Ajusta se o caminho for diferente
-import Home from "./pages/home"; // ou qual for tua página principal
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/home';
+import Agendar from './pages/agendar';
 
 function App() {
   return (
@@ -14,3 +14,4 @@ function App() {
 }
 
 export default App;
+
