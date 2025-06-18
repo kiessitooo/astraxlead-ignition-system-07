@@ -1,5 +1,4 @@
 import { ArrowDown, Globe, Smartphone, Zap, Palette, Briefcase, BarChart3 } from 'lucide-react';
-
 const Hero = () => {
   return <section id="home" className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden">
       {/* Background Elements */}
@@ -23,7 +22,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           {/* Left side - Content */}
-          <div className="text-left space-y-8 py-[45px]">
+          <div className="text-left space-y-8 my-[45px] py-[60px]">
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
               <span style={{
               textShadow: '0 0 20px rgba(238, 236, 38, 0.5), 0 0 40px rgba(238, 236, 38, 0.3)'
