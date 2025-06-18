@@ -1,21 +1,18 @@
-
 import { ArrowDown } from 'lucide-react';
-
 const Hero = () => {
-  return (
-    <section id="home" className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden">
+  return <section id="home" className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#8F00FF]/10 via-transparent to-[#EEEC26]/5"></div>
       
       {/* Digital Grid Texture */}
       <div className="absolute inset-0 opacity-10">
         <div className="w-full h-full" style={{
-          backgroundImage: `
+        backgroundImage: `
             linear-gradient(rgba(143, 0, 255, 0.3) 1px, transparent 1px),
             linear-gradient(90deg, rgba(143, 0, 255, 0.3) 1px, transparent 1px)
           `,
-          backgroundSize: '50px 50px'
-        }}></div>
+        backgroundSize: '50px 50px'
+      }}></div>
       </div>
 
       {/* Purple ambient glow */}
@@ -25,21 +22,21 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           {/* Left side - Content */}
-          <div className="text-left space-y-8">
+          <div className="text-left space-y-8 py-[45px]">
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-              <span className="text-[#EEEC26] block mb-2" style={{
-                textShadow: '0 0 20px rgba(238, 236, 38, 0.5), 0 0 40px rgba(238, 236, 38, 0.3)'
-              }}>
+              <span style={{
+              textShadow: '0 0 20px rgba(238, 236, 38, 0.5), 0 0 40px rgba(238, 236, 38, 0.3)'
+            }} className="block mb-2 text-slate-50">
                 A sua empresa vai decolar
               </span>
               <span className="text-[#EEEC26] block mb-2" style={{
-                textShadow: '0 0 20px rgba(238, 236, 38, 0.5), 0 0 40px rgba(238, 236, 38, 0.3)'
-              }}>
+              textShadow: '0 0 20px rgba(238, 236, 38, 0.5), 0 0 40px rgba(238, 236, 38, 0.3)'
+            }}>
                 em 30 dias ou devolvemos
               </span>
               <span className="text-[#EEEC26] block" style={{
-                textShadow: '0 0 20px rgba(238, 236, 38, 0.5), 0 0 40px rgba(238, 236, 38, 0.3)'
-              }}>
+              textShadow: '0 0 20px rgba(238, 236, 38, 0.5), 0 0 40px rgba(238, 236, 38, 0.3)'
+            }}>
                 o dinheiro
               </span>
             </h1>
@@ -49,10 +46,7 @@ const Hero = () => {
             </p>
 
             <div className="pt-4">
-              <a 
-                href="/agendar" 
-                className="inline-block bg-black border-2 border-[#EEEC26] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#EEEC26] hover:text-black transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-[#EEEC26]/25"
-              >
+              <a href="/agendar" className="inline-block bg-black border-2 border-[#EEEC26] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#EEEC26] hover:text-black transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-[#EEEC26]/25">
                 Agendar conversa
               </a>
             </div>
@@ -169,8 +163,6 @@ const Hero = () => {
           }
         }
       `}</style>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
