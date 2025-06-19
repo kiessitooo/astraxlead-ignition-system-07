@@ -1,8 +1,14 @@
 import { useState } from 'react';
-import { Calendar, Clock, User, Phone, Mail, Building, ArrowLeft } from 'lucide-react';
+import { Calendar as CalendarIcon, Clock, User, Phone, Mail, Building, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { Calendar } from '@/components/ui/calendar';
+import { Button } from '@/components/ui/button';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { format } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
+import { cn } from '@/lib/utils';
 
 const Agendar = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +20,7 @@ const Agendar = () => {
     hora: '',
     desafio: ''
   });
+  const [selectedDate, setSelectedDate] = useState<Date>();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -52,6 +59,7 @@ const Agendar = () => {
         hora: '',
         desafio: ''
       });
+      setSelectedDate(undefined);
     } catch (error) {
       console.error('Error saving appointment:', error);
       toast({
@@ -71,9 +79,21 @@ const Agendar = () => {
     });
   };
 
+  const handleDateSelect = (date: Date | undefined) => {
+    setSelectedDate(date);
+    if (date) {
+      setFormData({
+        ...formData,
+        data: format(date, 'yyyy-MM-dd')
+      });
+    }
+  };
+
   const timeSlots = [
     '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
-    '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00'
+    '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', 
+    '17:00', '17:30', '18:00', '18:30', '19:00', '19:30',
+    '20:00', '20:30', '21:00'
   ];
 
   return (
@@ -97,7 +117,7 @@ const Agendar = () => {
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="bg-gray-900/50 p-8 rounded-2xl border border-gray-800">
               <h2 className="text-2xl font-bold mb-6 flex items-center">
-                <Calendar className="w-6 h-6 text-[#EEEC26] mr-3" />
+                <CalendarIcon className="w-6 h-6 text-[#EEEC26] mr-3" />
                 Informações da Consulta
               </h2>
 
@@ -173,17 +193,35 @@ const Agendar = () => {
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium mb-2 flex items-center">
-                      <Calendar className="w-4 h-4 text-[#8F00FF] mr-2" />
+                      <CalendarIcon className="w-4 h-4 text-[#8F00FF] mr-2" />
                       Data Preferida
                     </label>
-                    <input
-                      type="date"
-                      name="data"
-                      value={formData.data}
-                      onChange={handleChange}
-                      required
-                      className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-[#EEEC26] focus:outline-none transition-colors"
-                    />
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <Button
+                          variant="outline"
+                          className={cn(
+                            "w-full justify-start text-left font-normal bg-gray-800 border-gray-700 text-white hover:bg-gray-700 hover:text-white",
+                            !selectedDate && "text-gray-400"
+                          )}
+                        >
+                          <CalendarIcon className="mr-2 h-4 w-4" />
+                          {selectedDate ? format(selectedDate, "PPP", { locale: ptBR }) : <span>Selecione uma data</span>}
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-auto p-0" align="start">
+                        <Calendar
+                          mode="single"
+                          selected={selectedDate}
+                          onSelect={handleDateSelect}
+                          disabled={(date) =>
+                            date < new Date() || date.getDay() === 0 || date.getDay() === 6
+                          }
+                          initialFocus
+                          className="pointer-events-auto bg-white text-black"
+                        />
+                      </PopoverContent>
+                    </Popover>
                   </div>
 
                   <div>
@@ -277,4 +315,3 @@ const Agendar = () => {
 };
 
 export default Agendar;
-
