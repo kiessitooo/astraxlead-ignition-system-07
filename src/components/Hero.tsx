@@ -1,4 +1,3 @@
-
 import { ArrowDown } from 'lucide-react';
 import { SplineScene } from '@/components/ui/splite';
 
@@ -28,19 +27,13 @@ const Hero = () => {
           {/* Left side - Content */}
           <div className="text-left space-y-8 my-[45px] py-[60px]">
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-              <span style={{
-                textShadow: '0 0 20px rgba(238, 236, 38, 0.5), 0 0 40px rgba(238, 236, 38, 0.3)'
-              }} className="block mb-2 text-slate-50">
+              <span className="block mb-2 text-slate-50">
                 A sua empresa vai decolar
               </span>
-              <span className="text-[#EEEC26] block mb-2" style={{
-                textShadow: '0 0 20px rgba(238, 236, 38, 0.5), 0 0 40px rgba(238, 236, 38, 0.3)'
-              }}>
+              <span className="text-[#EEEC26] block mb-2">
                 em 30 dias ou devolvemos
               </span>
-              <span className="text-[#EEEC26] block" style={{
-                textShadow: '0 0 20px rgba(238, 236, 38, 0.5), 0 0 40px rgba(238, 236, 38, 0.3)'
-              }}>
+              <span className="text-[#EEEC26] block">
                 o dinheiro
               </span>
             </h1>
