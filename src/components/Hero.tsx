@@ -1,21 +1,19 @@
 import { ArrowDown } from 'lucide-react';
 import { SplineScene } from '@/components/ui/splite';
-
 const Hero = () => {
-  return (
-    <section id="home" className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden">
+  return <section id="home" className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#8F00FF]/10 via-transparent to-[#EEEC26]/5"></div>
       
       {/* Digital Grid Texture */}
       <div className="absolute inset-0 opacity-10">
         <div className="w-full h-full" style={{
-          backgroundImage: `
+        backgroundImage: `
             linear-gradient(rgba(143, 0, 255, 0.3) 1px, transparent 1px),
             linear-gradient(90deg, rgba(143, 0, 255, 0.3) 1px, transparent 1px)
           `,
-          backgroundSize: '50px 50px'
-        }}></div>
+        backgroundSize: '50px 50px'
+      }}></div>
       </div>
 
       {/* Purple ambient glow */}
@@ -38,7 +36,7 @@ const Hero = () => {
               </span>
             </h1>
             
-            <p className="text-xl text-white leading-relaxed max-w-lg">
+            <p className="text-xl leading-relaxed max-w-lg text-slate-300">
               Nada de promessas vagas. Aquilo que já entregamos para dezenas de negócios pode ser seu.
             </p>
 
@@ -67,10 +65,7 @@ const Hero = () => {
           {/* Right side - 3D Spline Scene */}
           <div className="flex justify-center items-center">
             <div className="w-full h-[500px] relative">
-              <SplineScene 
-                scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-                className="w-full h-full"
-              />
+              <SplineScene scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode" className="w-full h-full" />
             </div>
           </div>
         </div>
@@ -79,8 +74,6 @@ const Hero = () => {
           <ArrowDown className="text-[#EEEC26] w-6 h-6" />
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
