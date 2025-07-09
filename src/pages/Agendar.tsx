@@ -18,7 +18,11 @@ const Agendar = () => {
     empresa: '',
     data: '',
     hora: '',
-    desafio: ''
+    desafio: '',
+    funcao: '',
+    meta_clientes_mes: '',
+    forma_divulgacao: '',
+    investimento: ''
   });
   const [selectedDate, setSelectedDate] = useState<Date>();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -39,7 +43,11 @@ const Agendar = () => {
             empresa: formData.empresa,
             data: formData.data,
             hora: formData.hora,
-            desafio: formData.desafio
+            desafio: formData.desafio,
+            funcao: formData.funcao,
+            meta_clientes_mes: parseInt(formData.meta_clientes_mes) || null,
+            forma_divulgacao: formData.forma_divulgacao,
+            investimento: formData.investimento
           }
         ]);
 
@@ -57,7 +65,11 @@ const Agendar = () => {
         empresa: '',
         data: '',
         hora: '',
-        desafio: ''
+        desafio: '',
+        funcao: '',
+        meta_clientes_mes: '',
+        forma_divulgacao: '',
+        investimento: ''
       });
       setSelectedDate(undefined);
     } catch (error) {
@@ -242,6 +254,76 @@ const Agendar = () => {
                       ))}
                     </select>
                   </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium mb-2">
+                    Você é o dono do negócio ou o responsável por atrair clientes?
+                  </label>
+                  <select
+                    name="funcao"
+                    value={formData.funcao}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-[#EEEC26] focus:outline-none transition-colors"
+                  >
+                    <option value="">Selecione sua função</option>
+                    <option value="dono">Dono do negócio</option>
+                    <option value="responsavel">Responsável por atrair clientes</option>
+                  </select>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium mb-2">
+                      Quantos novos clientes por mês você gostaria de atrair realisticamente?
+                    </label>
+                    <input
+                      type="number"
+                      name="meta_clientes_mes"
+                      value={formData.meta_clientes_mes}
+                      onChange={handleChange}
+                      required
+                      min="1"
+                      className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-[#EEEC26] focus:outline-none transition-colors"
+                      placeholder="Ex: 20"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium mb-2">
+                      Quanto estaria disposto a investir para chegar a meta de novos clientes?
+                    </label>
+                    <select
+                      name="investimento"
+                      value={formData.investimento}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-[#EEEC26] focus:outline-none transition-colors"
+                    >
+                      <option value="">Selecione o valor</option>
+                      <option value="ate_5000">Até R$ 5.000</option>
+                      <option value="5000_10000">R$ 5.000 - R$ 10.000</option>
+                      <option value="10000_20000">R$ 10.000 - R$ 20.000</option>
+                      <option value="20000_50000">R$ 20.000 - R$ 50.000</option>
+                      <option value="acima_50000">Acima de R$ 50.000</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium mb-2">
+                    Hoje qual é a principal forma de divulgação do seu negócio?
+                  </label>
+                  <input
+                    type="text"
+                    name="forma_divulgacao"
+                    value={formData.forma_divulgacao}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-[#EEEC26] focus:outline-none transition-colors"
+                    placeholder="Ex: Redes sociais, indicação, Google Ads..."
+                  />
                 </div>
 
                 <div>
