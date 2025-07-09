@@ -302,11 +302,11 @@ const Agendar = () => {
                       className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-[#EEEC26] focus:outline-none transition-colors"
                     >
                       <option value="">Selecione o valor</option>
-                      <option value="ate_5000">Até R$ 5.000</option>
-                      <option value="5000_10000">R$ 5.000 - R$ 10.000</option>
-                      <option value="10000_20000">R$ 10.000 - R$ 20.000</option>
-                      <option value="20000_50000">R$ 20.000 - R$ 50.000</option>
-                      <option value="acima_50000">Acima de R$ 50.000</option>
+                      <option value="100000_130000">100.000 - 130.000 Kz</option>
+                      <option value="130000_200000">130.000 - 200.000 Kz</option>
+                      <option value="200000_300000">200.000 - 300.000 Kz</option>
+                      <option value="300000_500000">300.000 - 500.000 Kz</option>
+                      <option value="acima_500000">Acima de 500.000 Kz</option>
                     </select>
                   </div>
                 </div>
