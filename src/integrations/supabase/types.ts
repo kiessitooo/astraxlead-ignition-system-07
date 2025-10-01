@@ -14,7 +14,54 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      appointments: {
+        Row: {
+          created_at: string
+          data: string
+          desafio: string | null
+          email: string
+          empresa: string
+          forma_divulgacao: string | null
+          funcao: string | null
+          hora: string
+          id: string
+          investimento: string | null
+          meta_clientes_mes: number | null
+          nome: string
+          telefone: string
+        }
+        Insert: {
+          created_at?: string
+          data: string
+          desafio?: string | null
+          email: string
+          empresa: string
+          forma_divulgacao?: string | null
+          funcao?: string | null
+          hora: string
+          id?: string
+          investimento?: string | null
+          meta_clientes_mes?: number | null
+          nome: string
+          telefone: string
+        }
+        Update: {
+          created_at?: string
+          data?: string
+          desafio?: string | null
+          email?: string
+          empresa?: string
+          forma_divulgacao?: string | null
+          funcao?: string | null
+          hora?: string
+          id?: string
+          investimento?: string | null
+          meta_clientes_mes?: number | null
+          nome?: string
+          telefone?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
